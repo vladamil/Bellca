@@ -1,3 +1,99 @@
-h1 {
-   color: red;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
+}
+
+.hero {
+   position: relative;
+   color: white;
+   background-color: black;
+   height: 100vh;
+   padding: 0 20px;
+   overflow: hidden;
+}
+
+.hero .back-video {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.hero nav {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 20px;
+   z-index: 9999;
+}
+
+.hero nav ul {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   list-style: none;
+}
+
+.hero nav ul li {
+   margin: 0 20px;
+}
+
+.hero nav ul li a {
+   text-decoration: none;
+   color: white;
+}
+
+.hero img {
+   height: 800px;
+   position: absolute;
+   right: 100px;
+   bottom: 0;
+   /* opacity: 0.8; */
+}
+
+.hero main {
+   position: absolute;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   left: 80px;
+}
+
+.hero main * {
+   z-index: 100;
+}
+
+.hero main h1 {
+   display: none;
+}
+
+.hero main p {
+   font-size: 60px;
+   font-weight: 200;
+}
+
+.hero main button {
+   display: block;
+   font-family: inherit;
+   font-size: 20px;
+   padding: 10px 20px;
+   background-color: #9b111e;
+   color: white;
+   border: none;
+   border-radius: 10px;
+   margin-top: 30px;
+   outline: none;
 }
