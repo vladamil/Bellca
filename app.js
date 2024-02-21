@@ -30,3 +30,19 @@ function startAboutSlideshow() {
 
 preloadImages();
 startAboutSlideshow();
+
+// const aboutBackgrounds = document.querySelectorAll('.about-js');
+// let index = 0;
+// console.log(aboutBackgrounds);
+
+// const change = () => {
+//    aboutBackgrounds.forEach((bg) => {
+//       bg.classList.remove('active');
+//    });
+//    aboutBackgrounds[index].classList.add('active');
+//    index++;
+//    console.log(index, 'hello');
+//    if (index === aboutImgs.length) index = 0;
+// };
+
+// setInterval(change, 4000);

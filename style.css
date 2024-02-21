@@ -148,5 +148,14 @@ html {
    background-position: center;
    background-size: cover;
    background-repeat: no-repeat;
-   transition: background-image 1s ease-in-out;
+   transition: background-image 1s ease-in-out 2.5s;
+   /* opacity: 0;
+   display: none;
+   transition: all 5s ease-in-out; */
 }
+
+/* .about .img-container.active {
+   display: block;
+   opacity: 1;
+   transition: all 5s ease-in-out;
+} */
