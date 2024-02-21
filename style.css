@@ -144,8 +144,9 @@ html {
    border-radius: 50%;
    border: 5px solid #9b111e;
    margin: 40px auto 0;
-   background-image: url(./media/studio.jpg);
+   background-image: url(./media/about/about1.jpg);
    background-position: center;
    background-size: cover;
    background-repeat: no-repeat;
+   transition: background-image 1s ease-in-out;
 }
