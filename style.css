@@ -30,7 +30,7 @@ html {
 }
 
 .hero nav {
-   position: fixed;
+   position: absolute;
    top: 0;
    left: 0;
    width: 100%;
@@ -149,13 +149,91 @@ html {
    background-size: cover;
    background-repeat: no-repeat;
    transition: background-image 1s ease-in-out 2.5s;
-   /* opacity: 0;
-   display: none;
-   transition: all 5s ease-in-out; */
 }
 
-/* .about .img-container.active {
+/* ----------------------- */
+/* NAILS SECTION */
+
+.nails {
+   background-color: #07070d;
+   color: white;
+   min-height: 100vh;
+}
+
+.nails .content {
+   display: flex;
+   align-items: flex-start;
+   justify-content: center;
+   padding: 20px;
+   border: 1px solid silver;
+   border-radius: 20px;
+   position: relative;
+   margin-top: 30px;
+}
+
+.nails .content::before {
+   content: ' ';
    display: block;
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   opacity: 0.08;
+   background-image: url('./media/about/about5.jpg');
+   background-repeat: no-repeat;
+   background-position: 50% 0;
+   background-size: cover;
+}
+.nails .content .text {
+   flex: 1;
+}
+
+.nails .content .text p {
+   margin-bottom: 15px;
+   font-size: 18px;
+}
+.nails .content .text p i {
+   color: #9b111e;
+}
+
+.nails .content .text h3 {
+   font-size: 30px;
+   margin-bottom: 30px;
+   font-weight: 200;
+   text-align: center;
+   border-bottom: 2px solid #9b111e;
+   padding-bottom: 10px;
+   text-transform: uppercase;
+}
+.nails .gallery {
+   flex: 2;
+   margin: auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+
+.nails .image {
+   overflow: hidden;
+   width: 150px;
+   height: 150px;
+   margin: 3px;
+   border-radius: 10px;
+   border: 2px solid #9b111e;
+   opacity: 0.9;
+   transform: scale(0.85) rotate(3deg);
+   transition: all 0.5s ease;
+}
+
+.nails .image:hover {
+   transform: scale(1);
    opacity: 1;
-   transition: all 5s ease-in-out;
-} */
+}
+
+.nails .image img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
