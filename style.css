@@ -109,14 +109,14 @@ html {
    padding: 80px 20px;
 }
 
-/* ---------------------- */
-/* ABOUT US SECTION */
-
-.about {
+.section {
    background-color: #07070d;
    color: white;
    min-height: 100vh;
 }
+
+/* ---------------------- */
+/* ABOUT US SECTION */
 
 .about h2 {
    font-size: 50px;
@@ -152,15 +152,15 @@ html {
 }
 
 /* ----------------------- */
-/* NAILS SECTION */
+/* SERVICES (NAILS & LASHES) SECTION */
 
-.nails {
+.service {
    background-color: #07070d;
    color: white;
    min-height: 100vh;
 }
 
-.nails .content {
+.service .content {
    display: flex;
    align-items: flex-start;
    justify-content: center;
@@ -171,7 +171,7 @@ html {
    margin-top: 30px;
 }
 
-.nails .content::before {
+.service .content::before {
    content: ' ';
    display: block;
    position: absolute;
@@ -185,19 +185,19 @@ html {
    background-position: 50% 0;
    background-size: cover;
 }
-.nails .content .text {
+.service .content .text {
    flex: 1;
 }
 
-.nails .content .text p {
+.service .content .text p {
    margin-bottom: 15px;
    font-size: 18px;
 }
-.nails .content .text p i {
+.service .content .text p i {
    color: #9b111e;
 }
 
-.nails .content .text h3 {
+.service .content .text h3 {
    font-size: 30px;
    margin-bottom: 30px;
    font-weight: 200;
@@ -206,7 +206,7 @@ html {
    padding-bottom: 10px;
    text-transform: uppercase;
 }
-.nails .gallery {
+.service .gallery {
    flex: 2;
    margin: auto;
    display: flex;
@@ -215,7 +215,7 @@ html {
    flex-wrap: wrap;
 }
 
-.nails .image {
+.service .image {
    overflow: hidden;
    width: 150px;
    height: 150px;
@@ -227,13 +227,17 @@ html {
    transition: all 0.5s ease;
 }
 
-.nails .image:hover {
+.service .image:hover {
    transform: scale(1);
    opacity: 1;
 }
 
-.nails .image img {
+.service .image img {
    width: 100%;
    height: 100%;
    object-fit: cover;
+}
+
+.service .content.reverse {
+   flex-direction: row-reverse;
 }
