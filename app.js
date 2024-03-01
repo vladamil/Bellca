@@ -6,7 +6,9 @@ const aboutImgs = [
    './media/about/about5.jpg',
    './media/about/about6.jpg',
 ];
+
 const aboutImage = document.getElementById('about-js');
+const galleryImgs = document.querySelectorAll('.gallery .image');
 
 // Preload images
 function preloadImages() {
@@ -16,6 +18,7 @@ function preloadImages() {
    });
 }
 
+// Auto-slide about us
 function startAboutSlideshow() {
    let index = 1;
 
@@ -27,6 +30,12 @@ function startAboutSlideshow() {
 
    setInterval(changeAboutImage, 4000);
 }
+
+galleryImgs.forEach((img) => {
+   img.addEventListener('click', () => {
+      console.log('open modal');
+   });
+});
 
 preloadImages();
 startAboutSlideshow();
