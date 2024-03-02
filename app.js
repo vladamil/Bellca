@@ -9,6 +9,9 @@ const aboutImgs = [
 
 const aboutImage = document.getElementById('about-js');
 const galleryImgs = document.querySelectorAll('.gallery .image');
+const modal = document.querySelector('.modal-image');
+const modalImg = document.getElementById('modal-js');
+const modalBtn = document.getElementById('modal-close-js');
 
 // Preload images
 function preloadImages() {
@@ -31,11 +34,33 @@ function startAboutSlideshow() {
    setInterval(changeAboutImage, 4000);
 }
 
+// open image modal
+const openModal = (imageDiv) => {
+   const src = imageDiv.querySelector('img').src;
+   modalImg.src = src;
+   modal.classList.add('open');
+};
+
+// close image modal
+const closeModal = () => {
+   modal.classList.remove('open');
+};
+
+// close image modal on Esc key
+const closeModalEsc = (e) => {
+   if (e.key === 'Escape' && modal.classList.contains('open')) {
+      closeModal();
+   }
+};
+
 galleryImgs.forEach((img) => {
    img.addEventListener('click', () => {
-      console.log('open modal');
+      openModal(img);
    });
 });
+
+modalBtn.addEventListener('click', closeModal);
+document.addEventListener('keydown', closeModalEsc);
 
 preloadImages();
 startAboutSlideshow();
