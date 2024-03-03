@@ -43,6 +43,7 @@ const openModal = (imageDiv) => {
 
 // close image modal
 const closeModal = () => {
+   modalImg.removeAttribute('src');
    modal.classList.remove('open');
 };
 
