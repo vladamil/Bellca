@@ -243,6 +243,92 @@ html {
 }
 
 /* ----------------------- */
+/* CONTACT SECTION */
+
+.contact h3 {
+   font-weight: 200;
+   font-size: 30px;
+   text-align: center;
+   margin-bottom: 15px;
+}
+.testimonials {
+   /* min-height: 300px; */
+   width: 800px;
+   max-width: 90%;
+   margin: auto;
+   position: relative;
+   overflow: hidden;
+}
+
+.testimonials .text {
+   border-radius: 15px;
+   border-left: 6px solid #9b111e;
+   /* font-size: 18px; */
+   line-height: 1.6;
+   background-color: rgb(155, 17, 30, 0.4);
+   padding: 30px;
+   color: silver;
+   font-style: italic;
+   translate: 0 -40px;
+   /* min-height: 200px; */
+   text-align: justify;
+   /* height: 200px; */
+}
+
+/* .testimonials .cover {
+   position: absolute;
+   width: 100%;
+   height: 200px;
+   border-radius: 15px;
+   background-color: #9b111e;
+   translate: -100% -40px;
+   animation: slide 2s ease;
+   z-index: 5;
+} */
+
+/* @keyframes slide {
+   0% {
+      transform: translateX(0);
+   }
+   70% {
+      transform: translateX(100%);
+   }
+   100% {
+      transform: translateX(0);
+   }
+} */
+
+.testimonials .name {
+   text-transform: capitalize;
+   font-size: 20px;
+   /* font-weight: 200; */
+   text-align: end;
+   font-style: normal;
+}
+
+.testimonials .name i {
+   color: darkgray;
+   font-size: 16px;
+   margin-right: 5px;
+}
+
+.testimonials .icon {
+   font-size: 60px;
+   color: silver;
+   position: relative;
+   z-index: 10;
+   text-align: center;
+}
+
+.end {
+   text-align: end;
+   font-weight: 200;
+   font-style: italic;
+   font-size: 18px;
+   transform: translateY(-35px);
+}
+
+/* ----------------------- */
 /* IMAGE MODAL */
 
 .modal-image {
