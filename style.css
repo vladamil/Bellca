@@ -49,12 +49,26 @@ html {
 }
 
 .hero nav ul li {
-   margin: 0 20px;
+   margin: 0 10px;
 }
 
 .hero nav ul li a {
    text-decoration: none;
+   text-transform: uppercase;
+   color: silver;
+}
+
+.hero nav ul li a:hover {
    color: white;
+}
+
+.hero nav ul li.social {
+   margin: 4px;
+   font-size: 16px;
+}
+
+.hero nav ul li.social i {
+   color: gray;
 }
 
 .hero img {
