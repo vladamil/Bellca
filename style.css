@@ -71,6 +71,10 @@ html {
    color: gray;
 }
 
+.hero nav ul li.social i:hover {
+   color: white;
+}
+
 .hero img {
    height: 800px;
    position: absolute;
@@ -103,8 +107,9 @@ html {
    font-weight: 200;
 }
 
-.hero main button {
+.hero main .btn {
    display: block;
+   text-decoration: none;
    font-family: inherit;
    font-size: 20px;
    padding: 10px 20px;
@@ -323,6 +328,52 @@ html {
    color: darkgray;
    font-size: 16px;
    margin-right: 5px;
+}
+
+.location {
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   background-image: url(./media/about/about1.jpg);
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   padding: 35px;
+   border-radius: 20px;
+}
+
+.location::before {
+   content: '';
+   background-color: rgba(0, 0, 0, 0.9);
+   position: absolute;
+   top: 0px;
+   right: 0px;
+   bottom: 0px;
+   left: 0px;
+   opacity: 0.9;
+}
+
+.location .phone {
+   position: relative;
+}
+.location .phone h3 {
+   margin-bottom: 40px;
+   /* font-size: 22px; */
+   border-bottom: 2px solid #9b111e;
+}
+
+.location .phone div {
+   margin-bottom: 10px;
+}
+
+.location .map {
+   position: relative;
+   width: 450px;
+   height: 300px;
+   max-width: 100%;
+   overflow: hidden;
+   border-radius: 20px;
 }
 
 /* ----------------------- */
