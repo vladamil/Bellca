@@ -16,7 +16,7 @@ html {
    color: white;
    background-color: black;
    height: 100vh;
-   padding: 0 20px;
+   padding: 0px 20px;
    overflow: hidden;
 }
 
@@ -75,12 +75,21 @@ html {
    color: white;
 }
 
+/* mobile menu */
+.hero nav .mobile-btn {
+   color: silver;
+   font-size: 30px;
+   margin-right: 20px;
+   cursor: pointer;
+   display: none;
+}
+
 .hero img {
    height: 800px;
    position: absolute;
    right: 100px;
    bottom: 0;
-   /* opacity: 0.8; */
+   /* opacity: 0.6; */
 }
 
 .hero main {
@@ -359,12 +368,16 @@ html {
 }
 .location .phone h3 {
    margin-bottom: 40px;
-   /* font-size: 22px; */
    border-bottom: 2px solid #9b111e;
 }
 
 .location .phone div {
    margin-bottom: 10px;
+}
+
+.location .phone .message {
+   font-style: italic;
+   margin-bottom: 1px;
 }
 
 .location .map {
@@ -426,4 +439,47 @@ html {
    height: 100%;
    width: 100%;
    object-fit: contain;
+}
+
+/* ----------------------------------- */
+/* ----------------------------------- */
+/* RESPONSIVE DESIGN */
+
+@media screen and (max-width: 1600px) {
+   .hero img {
+      opacity: 0.5;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .hero nav ul {
+      display: none;
+   }
+
+   .hero nav .mobile-btn {
+      display: block;
+   }
+
+   .hero img {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      max-width: 100%;
+      height: auto;
+      opacity: 0.3;
+   }
+
+   .hero main {
+      position: static;
+      justify-content: space-evenly;
+   }
+
+   .hero main p {
+      font-size: 35px;
+   }
+
+   .hero main .btn {
+      font-size: 16px;
+   }
 }

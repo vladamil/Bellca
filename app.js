@@ -128,7 +128,7 @@ const startReviewsChange = () => {
       if (index === reviews.length) index = 0;
    };
 
-   setInterval(changeReview, 8000);
+   setInterval(changeReview, 8500);
 };
 
 // EVENT LISTENERS
