@@ -44,6 +44,10 @@ const modal = document.querySelector('.modal-image');
 const modalImg = document.getElementById('modal-js');
 const modalBtn = document.getElementById('modal-close-js');
 const testimonialsContent = document.querySelector('.testimonials .content');
+const sideMenu = document.querySelector('.side-menu');
+const openBtn = document.querySelector('.mobile-btn');
+const closeBtn = document.querySelector('.side-close');
+const sideMenuLinks = document.querySelectorAll('.side-links li');
 
 // Preload images
 function preloadImages() {
@@ -114,7 +118,7 @@ testimonials.forEach((test, index) => {
    reviews.push(review);
 });
 
-testimonialsContent.style.minHeight = minHeight + 'px'; //setting min-height to reviews container
+testimonialsContent.style.height = minHeight + 'px'; //setting min-height to reviews container
 
 // auto-change reviews
 const startReviewsChange = () => {
@@ -131,7 +135,19 @@ const startReviewsChange = () => {
    setInterval(changeReview, 8500);
 };
 
+// open side-menu
+const openSideMenu = () => {
+   sideMenu.classList.add('open');
+};
+
+// close side-menu
+const closeSideMenu = () => {
+   sideMenu.classList.remove('open');
+};
+
+// ------------------------
 // EVENT LISTENERS
+// ------------------------
 galleryImgs.forEach((img) => {
    img.addEventListener('click', () => {
       openModal(img);
@@ -140,7 +156,21 @@ galleryImgs.forEach((img) => {
 
 modalBtn.addEventListener('click', closeModal);
 document.addEventListener('keydown', closeModalEsc);
+openBtn.addEventListener('click', openSideMenu);
+closeBtn.addEventListener('click', closeSideMenu);
+sideMenuLinks.forEach((link) => link.addEventListener('click', closeSideMenu));
+// window.addEventListener('resize', () => {
+//    minHeight = 0;
+//    reviews.forEach((rev) => {
+//       if (rev.offsetHeight > minHeight) {
+//          minHeight = rev.offsetHeight; //calculating min-height depending on reviews
+//       }
+//       testimonialsContent.style.height = minHeight + 'px';
+//       console.log(minHeight);
+//    });
+// });
 
+// INIT FUNCTIONS
 preloadImages();
 startAboutSlideshow();
 startReviewsChange();
