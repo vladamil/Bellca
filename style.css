@@ -503,6 +503,10 @@ html {
 }
 
 @media screen and (max-width: 768px) {
+   .container {
+      padding: 50px 10px;
+   }
+
    .hero nav ul {
       display: none;
    }
@@ -518,7 +522,7 @@ html {
       bottom: 0;
       max-width: 100%;
       height: auto;
-      opacity: 0.3;
+      opacity: 0.4;
    }
 
    .hero main {
@@ -532,5 +536,50 @@ html {
 
    .hero main .btn {
       font-size: 16px;
+   }
+
+   .about h2 {
+      font-size: 28px;
+   }
+
+   .service .content {
+      flex-direction: column;
+   }
+
+   .service .content.reverse {
+      flex-direction: column;
+   }
+
+   .service .content .text p {
+      font-size: 16px;
+   }
+
+   .service .image {
+      height: 70px;
+      width: 70px;
+      margin: 1px;
+   }
+
+   .contact h3 {
+      font-size: 25px;
+   }
+
+   /* .testimonials .content {
+      background-color: rgba(155, 17, 30, 0.3);
+      border-radius: 15px;
+   } */
+
+   .location {
+      flex-direction: column;
+      padding: 20px 0px;
+   }
+
+   .location .phone {
+      margin-bottom: 20px;
+   }
+
+   .modal-content {
+      height: 80%;
+      width: 100%;
    }
 }
