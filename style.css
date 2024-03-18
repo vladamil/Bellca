@@ -441,6 +441,22 @@ html {
    object-fit: contain;
 }
 
+.modal-image .slide {
+   font-size: 80px;
+   position: fixed;
+   background: transparent;
+   border: none;
+   color: silver;
+   outline: none;
+}
+
+.modal-image .slide.prev {
+   left: 0;
+}
+.modal-image .slide.next {
+   right: 0;
+}
+
 /* ------------------------------ */
 /* SIDE MENU */
 
@@ -581,5 +597,14 @@ html {
    .modal-content {
       height: 80%;
       width: 100%;
+   }
+
+   .modal-image .slide.prev {
+      left: 0;
+      bottom: 0px;
+   }
+   .modal-image .slide.next {
+      right: 0;
+      bottom: 0px;
    }
 }

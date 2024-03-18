@@ -39,15 +39,21 @@ testimonials = [
 ];
 
 const aboutImage = document.getElementById('about-js');
-const galleryImgs = document.querySelectorAll('.gallery .image');
+const galleryImgs = document.querySelectorAll('.gallery .image img');
 const modal = document.querySelector('.modal-image');
 const modalImg = document.getElementById('modal-js');
 const modalBtn = document.getElementById('modal-close-js');
+const modalPrev = document.querySelector('.prev');
+const modalNext = document.querySelector('.next');
 const testimonialsContent = document.querySelector('.testimonials .content');
 const sideMenu = document.querySelector('.side-menu');
 const openBtn = document.querySelector('.mobile-btn');
 const closeBtn = document.querySelector('.side-close');
 const sideMenuLinks = document.querySelectorAll('.side-links li');
+
+let imgIndex = 0; // index of gallery image
+let minHeight = 0; // height of testimonials container
+const reviews = []; // reviews to be created by JS
 
 // Preload images
 function preloadImages() {
@@ -71,10 +77,32 @@ function startAboutSlideshow() {
 }
 
 // open image modal
-const openModal = (imageDiv) => {
-   const src = imageDiv.querySelector('img').src;
+const openModal = (src) => {
+   // const src = imageDiv.querySelector('img').src;
    modalImg.src = src;
    modal.classList.add('open');
+};
+
+//next modal image function
+let nextImg = () => {
+   imgIndex++;
+   //check if it is the the last image
+   if (imgIndex >= galleryImgs.length) {
+      imgIndex = 0;
+   }
+   //return src of the new image
+   return galleryImgs[imgIndex].src;
+};
+
+//previous modal image function
+let prevImg = () => {
+   imgIndex--;
+   //check if it is the first image
+   if (imgIndex < 0) {
+      imgIndex = galleryImgs.length - 1;
+   }
+   //return src of previous image
+   return galleryImgs[imgIndex].src;
 };
 
 // close image modal
@@ -89,9 +117,6 @@ const closeModalEsc = (e) => {
       closeModal();
    }
 };
-
-let minHeight = 0;
-const reviews = [];
 
 // creating testimonials
 testimonials.forEach((test, index) => {
@@ -148,10 +173,28 @@ const closeSideMenu = () => {
 // ------------------------
 // EVENT LISTENERS
 // ------------------------
-galleryImgs.forEach((img) => {
-   img.addEventListener('click', () => {
-      openModal(img);
+galleryImgs.forEach((img, index) => {
+   img.addEventListener('click', (e) => {
+      imgIndex = index;
+      openModal(e.target.src);
    });
+});
+
+modalPrev.addEventListener('click', () => {
+   modalImg.src = prevImg();
+});
+
+modalNext.addEventListener('click', () => {
+   modalImg.src = nextImg();
+});
+
+document.addEventListener('keydown', (e) => {
+   if (e.key === 'ArrowLeft' && modal.classList.contains('open')) {
+      modalImg.src = prevImg();
+   }
+   if (e.key === 'ArrowRight' && modal.classList.contains('open')) {
+      modalImg.src = nextImg();
+   }
 });
 
 modalBtn.addEventListener('click', closeModal);
