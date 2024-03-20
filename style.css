@@ -41,6 +41,13 @@ html {
    z-index: 100;
 }
 
+.logo {
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   width: 250px;
+}
+
 .hero nav ul {
    display: flex;
    align-items: center;
@@ -84,7 +91,7 @@ html {
    display: none;
 }
 
-.hero img {
+.hero .hero-img {
    height: 800px;
    position: absolute;
    right: 100px;
@@ -513,7 +520,7 @@ html {
 /* RESPONSIVE DESIGN */
 
 @media screen and (max-width: 1600px) {
-   .hero img {
+   .hero .hero-img {
       opacity: 0.5;
    }
 }
@@ -531,23 +538,29 @@ html {
       display: block;
    }
 
-   .hero img {
+   .hero .hero-img {
       position: absolute;
       left: 0;
       right: 0;
       bottom: 0;
       max-width: 100%;
       height: auto;
-      opacity: 0.4;
+      opacity: 0.3;
    }
 
    .hero main {
       position: static;
-      justify-content: space-evenly;
+      justify-content: space-between;
+      padding-bottom: 20px;
+   }
+
+   .logo {
+      position: static;
+      /* width: 200px; */
    }
 
    .hero main p {
-      font-size: 35px;
+      font-size: 30px;
    }
 
    .hero main .btn {
