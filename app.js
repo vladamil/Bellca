@@ -54,6 +54,7 @@ const sideMenuLinks = document.querySelectorAll('.side-links li');
 let imgIndex = 0; // index of gallery image
 let minHeight = 0; // height of testimonials container
 const reviews = []; // reviews to be created by JS
+let throttled = false; // flag for firing resive event
 
 // Preload images
 function preloadImages() {
@@ -202,16 +203,23 @@ document.addEventListener('keydown', closeModalEsc);
 openBtn.addEventListener('click', openSideMenu);
 closeBtn.addEventListener('click', closeSideMenu);
 sideMenuLinks.forEach((link) => link.addEventListener('click', closeSideMenu));
-// window.addEventListener('resize', () => {
-//    minHeight = 0;
-//    reviews.forEach((rev) => {
-//       if (rev.offsetHeight > minHeight) {
-//          minHeight = rev.offsetHeight; //calculating min-height depending on reviews
-//       }
-//       testimonialsContent.style.height = minHeight + 'px';
-//       console.log(minHeight);
-//    });
-// });
+window.addEventListener('resize', () => {
+   if (!throttled) {
+      minHeight = 0;
+      reviews.forEach((rev) => {
+         if (rev.offsetHeight > minHeight) {
+            minHeight = rev.offsetHeight; //calculating min-height depending on reviews
+         }
+      });
+      testimonialsContent.style.height = minHeight + 'px';
+      console.log(minHeight);
+      throttled = true;
+
+      setTimeout(() => {
+         throttled = false;
+      }, 200);
+   }
+});
 
 // INIT FUNCTIONS
 preloadImages();
