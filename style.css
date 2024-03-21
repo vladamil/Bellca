@@ -43,7 +43,7 @@ html {
 
 .logo {
    position: absolute;
-   top: 0px;
+   top: 20px;
    left: 0px;
    width: 250px;
 }
@@ -141,7 +141,7 @@ html {
    width: 1200px;
    max-width: 100%;
    margin: 0 auto;
-   padding: 80px 20px;
+   padding: 60px 20px;
 }
 
 .section {
@@ -515,6 +515,55 @@ html {
    text-transform: uppercase;
 }
 
+.side-socials {
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   font-size: 30px;
+}
+
+.side-socials a {
+   text-decoration: none;
+   color: silver;
+}
+
+/* ---------------------------------- */
+/* FOOTER */
+
+footer {
+   background-color: #9b111e;
+   color: silver;
+}
+
+footer .content {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.footer-address {
+   font-size: 14px;
+}
+
+footer .small {
+   font-size: 14px;
+   text-align: center;
+   color: rgb(124, 122, 122);
+}
+
+.footer-socials {
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   font-size: 40px;
+}
+
+.footer-socials a {
+   text-decoration: none;
+   color: silver;
+   margin: 20px;
+}
+
 /* ----------------------------------- */
 /* ----------------------------------- */
 /* RESPONSIVE DESIGN */
@@ -551,12 +600,12 @@ html {
    .hero main {
       position: static;
       justify-content: space-between;
-      padding-bottom: 20px;
+      padding: 20px 0;
    }
 
    .logo {
       position: static;
-      /* width: 200px; */
+      max-width: 70%;
    }
 
    .hero main p {
@@ -605,6 +654,17 @@ html {
 
    .location .phone {
       margin-bottom: 20px;
+   }
+
+   footer .content {
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+   }
+
+   .footer-address {
+      margin-bottom: 10px;
    }
 
    .modal-content {
