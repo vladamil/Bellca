@@ -38,6 +38,7 @@ testimonials = [
    },
 ];
 
+const internalLinks = document.querySelectorAll('.internal');
 const aboutImages = document.querySelectorAll('.about-image');
 const aboutImage = document.getElementById('about-js');
 const galleryImgs = document.querySelectorAll('.gallery .image img');
@@ -57,6 +58,13 @@ let imgIndex = 0; // index of gallery image
 let minHeight = 0; // height of testimonials container
 const reviews = []; // reviews to be created by JS
 let throttled = false; // flag for firing resize event
+
+// scroll in section function
+function scrollToSection(sectionId, event) {
+   event.preventDefault(); // Prevent the default behavior of the anchor tag
+   const section = document.getElementById(sectionId);
+   section.scrollIntoView({ behavior: 'smooth' });
+}
 
 // Auto-slide about us
 function startAboutSlideshow() {
@@ -167,6 +175,14 @@ const closeSideMenu = () => {
 // ------------------------
 // EVENT LISTENERS
 // ------------------------
+internalLinks.forEach((link) => {
+   const to = link.getAttribute('href').substring(1);
+
+   link.addEventListener('click', (e) => {
+      scrollToSection(to, e);
+   });
+});
+
 galleryImgs.forEach((img, index) => {
    img.addEventListener('click', (e) => {
       imgIndex = index;
