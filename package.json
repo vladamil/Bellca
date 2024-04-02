@@ -1,0 +1,9 @@
+{
+   "scripts": {
+      "parcel": "parcel index.html",
+      "build": "parcel build index.html --no-source-maps"
+   },
+   "devDependencies": {
+      "parcel": "^2.12.0"
+   }
+}

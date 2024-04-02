@@ -1,11 +1,11 @@
-const aboutImgs = [
-   './media/about/about1.jpg',
-   './media/about/about2.jpg',
-   './media/about/about3.jpg',
-   './media/about/about4.jpg',
-   './media/about/about5.jpg',
-   './media/about/about6.jpg',
-];
+// const aboutImgUrls = [
+//    './media/about/about1.jpg',
+//    './media/about/about2.jpg',
+//    './media/about/about3.jpg',
+//    './media/about/about4.jpg',
+//    './media/about/about5.jpg',
+//    './media/about/about6.jpg',
+// ];
 
 testimonials = [
    {
@@ -38,6 +38,7 @@ testimonials = [
    },
 ];
 
+const aboutImages = document.querySelectorAll('.about-image');
 const aboutImage = document.getElementById('about-js');
 const galleryImgs = document.querySelectorAll('.gallery .image img');
 const modal = document.querySelector('.modal-image');
@@ -51,27 +52,20 @@ const openBtn = document.querySelector('.mobile-btn');
 const closeBtn = document.querySelector('.side-close');
 const sideMenuLinks = document.querySelectorAll('.side-links li');
 
+const aboutImgUrls = [...aboutImages].map((img) => img.src);
 let imgIndex = 0; // index of gallery image
 let minHeight = 0; // height of testimonials container
 const reviews = []; // reviews to be created by JS
-let throttled = false; // flag for firing resive event
-
-// Preload images
-function preloadImages() {
-   aboutImgs.forEach(function (url) {
-      let img = new Image();
-      img.src = url;
-   });
-}
+let throttled = false; // flag for firing resize event
 
 // Auto-slide about us
 function startAboutSlideshow() {
    let index = 1;
 
    const changeAboutImage = () => {
-      aboutImage.style.backgroundImage = `url('${aboutImgs[index]}')`;
+      aboutImage.style.backgroundImage = `url('${aboutImgUrls[index]}')`;
       index++;
-      if (index === aboutImgs.length) index = 0;
+      if (index === aboutImgUrls.length) index = 0;
    };
 
    setInterval(changeAboutImage, 4000);
@@ -79,7 +73,6 @@ function startAboutSlideshow() {
 
 // open image modal
 const openModal = (src) => {
-   // const src = imageDiv.querySelector('img').src;
    modalImg.src = src;
    modal.classList.add('open');
 };
@@ -212,7 +205,6 @@ window.addEventListener('resize', () => {
          }
       });
       testimonialsContent.style.height = minHeight + 'px';
-      console.log(minHeight);
       throttled = true;
 
       setTimeout(() => {
@@ -222,6 +214,5 @@ window.addEventListener('resize', () => {
 });
 
 // INIT FUNCTIONS
-preloadImages();
 startAboutSlideshow();
 startReviewsChange();
