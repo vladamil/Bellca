@@ -1,12 +1,3 @@
-// const aboutImgUrls = [
-//    './media/about/about1.jpg',
-//    './media/about/about2.jpg',
-//    './media/about/about3.jpg',
-//    './media/about/about4.jpg',
-//    './media/about/about5.jpg',
-//    './media/about/about6.jpg',
-// ];
-
 testimonials = [
    {
       text: 'Prezadovoljna sam profesionalnošću, izborom i kvalitetom materijala, savetima kako da održavam uradjene nokte i zanoktice koje su mi veliki problem. Kao neko ko nema vremena da sam brine o noktima, ništa mi se ne zakine, niti zalomi, na korekciju dolazim svake 3-4 nedelje. Bukvalno odmorim u prijatnom ambijentu Bellca studija.',
